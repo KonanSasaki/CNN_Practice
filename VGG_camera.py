@@ -31,7 +31,7 @@ resize = 224
 mean = (0.485,0.456,0.406)
 std = (0.229,0.224,0.225)
 
-ILSVRC_class_index = json.load(open('C:\\Users\\konan\\pytorch_advanced\\1_image_classification\\data\\imagenet_class_index.json','r'))
+ILSVRC_class_index = json.load(open('C:\\imagenet_class_index.json','r'))
 ILSVRC_class_index
 
 class ILSVRCPredictor():
@@ -42,7 +42,7 @@ class ILSVRCPredictor():
 
     def predict_max(self,out):
 
-        maxid = np.argmax(out.detach().numpy()) #pytorchTensor to numpy 変換
+        maxid = np.argmax(out.detach().numpy()) 
         predicted_label_name = self.class_index[str(maxid)][1]
         return predicted_label_name
 
